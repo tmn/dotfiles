@@ -7,4 +7,8 @@ insert = "bar"
 normal = "block"
 select = "underline"
 
+[keys.normal]
+S-d = ["select_mode", "goto_line_end", "delete_selection"]
 
+[keys.insert]
+C-o = ["add_newline_below", "move_line_down"]

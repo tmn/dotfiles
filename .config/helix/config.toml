@@ -1,6 +1,13 @@
 theme = "onedark"
 
 [editor]
+auto-pairs = false
+
+[editor.file-picker]
+hidden = false
+
+[editor.soft-wrap]
+enable = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -8,7 +15,13 @@ normal = "block"
 select = "underline"
 
 [keys.normal]
-S-d = ["select_mode", "goto_line_end", "delete_selection"]
+# S-d = ["select_mode", "goto_line_end", "delete_selection"]
+
+A-l = "jump_view_right"
+A-h = "jump_view_left"
+A-j = "jump_view_down"
+A-k = "jump_view_up"
+C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+C-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
 
 [keys.insert]
-C-o = ["add_newline_below", "move_line_down"]

@@ -1,14 +1,26 @@
-[language-server.pyright]
-command = "pyright-langserver"
-args = ["--stdio"]
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
 
 [[language]]
 name = "python"
-scope = "source.python"
-injection-regex = "python"
-file-types = ["py", "pyi"]
-roots = [".", "pyproject.toml"]
-comment-token = "#"
-indent = { tab-width = 4, unit = " " }
-formatter = { command = "ruff", args = ["format"] }
-language-servers = ["pyright", "ruff"]
+auto-format = true
+language-servers = ["basedpyright", "ruff"]
+
+[[language]]
+name = "dockerfile"
+file-types = [
+  "Dockerfile",
+  { glob = "Dockerfile" },
+  { glob = "Dockerfile.*" },
+  { glob = "Dockerfile-*" },
+  "dockerfile",
+  { glob = "dockerfile" },
+  { glob = "dockerfile.*" },
+  "Containerfile",
+  { glob = "Containerfile" },
+  { glob = "Containerfile.*" },
+  "containerfile",
+  { glob = "containerfile" },
+  { glob = "containerfile.*" },
+]

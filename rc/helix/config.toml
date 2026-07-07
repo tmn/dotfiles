@@ -1,0 +1,15 @@
+theme = "onedark"
+
+[editor]
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[keys.normal]
+C-o = ["add_newline_below", "move_line_down"]
+S-d = ["select_mode", "goto_line_end", "delete_selection"]
+
+[keys.insert]
+C-o = ["add_newline_below", "move_line_down"]

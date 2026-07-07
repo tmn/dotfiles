@@ -1,0 +1,93 @@
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+
+[language-server.pyrefly]
+command = "pyrefly"
+args = ["lsp"]
+
+#
+# LANGUAGES
+# 
+
+
+[[language]]
+name = "python"
+language-servers = ["ruff", "pyrefly"]
+auto-format = true
+
+[[language]]
+name = "cpp"
+auto-format = false
+
+[[language]]
+name = "tsx"
+language-servers = [
+  "typescript-language-server", # optional
+  "vscode-eslint-language-server",
+]
+auto-format = true
+formatter = { command = "npx", args = ["prettier", "--parser", "typescript"] }
+
+[[language]]
+name = "typescript"
+language-servers = [
+  "typescript-language-server", # optional
+  "vscode-eslint-language-server",
+]
+auto-format = true
+formatter = { command = "npx", args = ["prettier", "--parser", "typescript"] }
+
+[[language]]
+name = "javascript"
+language-servers = [
+  "typescript-language-server", # optional
+  "vscode-eslint-language-server",
+]
+auto-format = true
+formatter = { command = "npx", args = ["prettier", "--parser", "typescript"] }
+
+[[language]]
+name = "jsx"
+language-servers = [
+  "typescript-language-server", # optional
+  "vscode-eslint-language-server",
+]
+auto-format = true
+formatter = { command = "npx", args = ["prettier", "--parser", "typescript"] }
+
+[[language]]
+name = "json"
+auto-format = true
+formatter = { command = "npx", args = ["prettier", "--parser", "json"] }
+
+[[language]]
+name = "toml"
+roots = ["."]
+
+[[language]]
+name = "cmake"
+auto-format = true
+language-servers = [{ name = "neocmakelsp" }]
+
+[language-server.neocmakelsp]
+command = "neocmakelsp"
+args = ["--stdio"]
+
+[[language]]
+name = "dockerfile"
+file-types = [
+  "Dockerfile",
+  { glob = "Dockerfile" },
+  { glob = "Dockerfile.*" },
+  { glob = "Dockerfile-*" },
+  "dockerfile",
+  { glob = "dockerfile" },
+  { glob = "dockerfile.*" },
+  "Containerfile",
+  { glob = "Containerfile" },
+  { glob = "Containerfile.*" },
+  "containerfile",
+  { glob = "containerfile" },
+  { glob = "containerfile.*" },
+]

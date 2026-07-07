@@ -4,14 +4,8 @@ Thumbs.db
 
 node_modules/
 
-*.log
-
-result
 result/
 _build/
 build/
 dist/
 _dist/
-
-__pycache__/
-.venv/

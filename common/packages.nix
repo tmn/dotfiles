@@ -1,8 +1,7 @@
-{ pkgs
-, lib
-, ...
-}: {
+{ pkgs, ... }:
+{
   environment.systemPackages = with pkgs; [
-    jdk21
+    prettier
+    tree-sitter
   ];
 }
